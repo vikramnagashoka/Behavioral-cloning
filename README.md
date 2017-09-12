@@ -9,7 +9,7 @@ The goals / steps of this project are the following:
   
   -> Test that the model successfully drives around track one without leaving the road.
   
-# Details about the model
+### Details about the model
 The initial models were simple regression models. Some of the techniques used in CNN models with small number of layers were pooling and normalization on data. Training images were cropped at the top and bottom to get rid of unhelpful parts of the image. Other models that were used for the purpose was LeNet. This did not provide useful predictions as I could see the car was driving off the road even in straight lines. The probable cause could be due to the architecture of the model where pooling is an important part. I observed similar behaviour with the NVIDIA model where when I added pooling layers the performance got worse. I also tried using only just the center images, as expected it did not perform very well. But with more data it got better but never perfect.
 
 The final model is based on the NVIDIA’s deep learning model for self-driving cars. This model has a # normalization layer at the beginning. This is followed by # 6 convolutional layers and then 4 fully connected layers. The additional convolutional layer in my model made all the difference to my results because before this addition even with large amounts of data my model did not perform very well. The car use to go off track at certain points. The main reason was the model overfitting most of the time. This occurred even when I tried with different sets of data. Even after adding dropout layers the model improved considerably but not completely. So with this additional convolutional layer I was able to get rid of even the dropout layers. Dropout layers improved the performance only considerably. With the additional convolutional layer I was able to achieve better results and without any dropout layers. Adding a dropout layers made the model a little weaker, not considerably but a little. So I refrained from adding the dropout layer.
@@ -22,7 +22,7 @@ Preprocessing: These images were cropped at the top and bottom. 50 pixels from t
 
 Used the preprocessed data to build the model. Train and validation data split were 0.9 and 0.1. Model was trained for 5 epochs.
 
-# To run the code:
+### To run the code:
 Step 1: Download the simulator from here: https://github.com/vikramnagashoka/self-driving-car-sim
 
 Step 2: Install the simulator and start in autonomous mode.
