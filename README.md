@@ -21,3 +21,10 @@ Training data included 3 laps of driving around track 1. It also included few re
 Preprocessing: These images were cropped at the top and bottom. 50 pixels from the top and 15 pixels from the bottom. Normalization of the images using the Keras lambda layer. For some unknown reason flipping the images and augmenting the dataset did not work very well for my model. So I have not employed that technique.
 
 Used the preprocessed data to build the model. Train and validation data split were 0.9 and 0.1. Model was trained for 5 epochs.
+
+# To run the code:
+Step 1: Download the simulator from here: https://github.com/vikramnagashoka/self-driving-car-sim
+
+Step 2: Install the simulator and start in autonomous mode.
+
+Step 3: Run it using command: python drive.py model.h5
